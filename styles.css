@@ -95,6 +95,11 @@ body {
     background-color: #f1f1f1;
 }
 
+.header_icons {
+    display: flex;
+    align-items: center;
+}
+
 .header_icons i {
     margin-left: 24px;
     padding: 8px;
@@ -104,6 +109,25 @@ body {
 
 .header_icons i:hover {
     background-color: #f1f1f1;
+}
+
+.notification_icon {
+    position: relative;
+}
+
+.notification_count {
+    position: absolute;
+    top: -3px;
+    right: -2px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 7px;
+    font-size:12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mainBody {
@@ -150,7 +174,7 @@ hr {
 }
 
 .videos {
-    background-color: #f9f9f9;
+    background-color: #fcfcfc;
     border: 1px solid #ddd;
     padding: 15px 15px;
     overflow-y: scroll;
@@ -232,3 +256,4 @@ h1 {
     color: black;
     margin: 10px;
 }
+
