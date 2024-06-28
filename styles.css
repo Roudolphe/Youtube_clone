@@ -3,14 +3,14 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
     font-family: "Roboto", sans-serif;
 }
 
-.material-icons{
+.material-icons {
     color: rgb(96,96,96);
     font-size: 24px;
 }
@@ -21,6 +21,11 @@ body {
     align-items: center;
     height: 70px;
     padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
 }
 
 .header_left {
@@ -28,113 +33,115 @@ body {
     align-items: center;
 }
 
-.header_left img {
-    width: 100px;
-    margin-left: 15px;
-}
-
 .header_left i {
     padding: 0 7px;
     cursor: pointer;
 }
 
+.header img {
+    width: 100px;
+    margin-left: 18px;
+}
+
 .header_search {
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    flex-grow: 1;
-    max-width: 600px; 
+    max-width: 600px;
 }
 
 .header_search form {
     display: flex;
     flex-grow: 1;
+   
 }
 
 .header_search input {
     flex-grow: 1;
-    padding: 8px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    padding: 8px;
     border-radius: 4px 0 0 4px;
+    border: 1px solid #ddd;
+    border-right: 0;
 }
 
 .header_search button {
     padding: 8px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-left: 0;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
-}
-
-.header_search .mic-icon {
-    margin-left: 10px; 
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: #f0f0f0;
-    border-radius: 50%;
     transition: background-color 0.3s, transform 0.3s;
 }
 
-.header_search .mic-icon:hover {
-    background-color: #e0e0e0;
+.header_search button:hover {
+    background-color: #ccc;
+}
+
+.header_search .mic_icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.header_search .mic_icon:hover {
+    background-color: #f1f1f1;
 }
 
 .header_icons i {
-    padding: 15px;
-    margin-left: 10px; 
+    margin-left: 24px;
+    padding: 8px;
     cursor: pointer;
     border-radius: 50%;
-    transition: background-color 0.3s, transform 0.3s;
 }
-.header_icons i:hover{
-    background-color: #f0f0f0;
-    font-size: 15px;
+
+.header_icons i:hover {
+    background-color: #f1f1f1;
 }
 
 .mainBody {
-    height: calc(100vh - 70px);
     display: flex;
-    overflow-y: hidden;
+    margin-top: 70px; 
 }
 
 .sidebar {
     height: 100%;
     width: 230px;
     background-color: white;
-    overflow-y: scroll;
+    overflow-y: auto;
+    position: fixed;
 }
 
 .sidebar_categories {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 .sidebar_category {
+    padding: 12px 25px;
     display: flex;
     align-items: center;
-    padding: 12px 25px;
 }
 
 .sidebar_category span {
     margin-left: 15px;
 }
 
-.sidebar_category:hover {
-    background: #e5e5e5;
+.sidebar_category:hover{
+    background-color: #f1f1f1;
     cursor: pointer;
 }
 
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
 
 hr {
     height: 1px;
@@ -142,27 +149,27 @@ hr {
     border: none;
 }
 
-.videos{
+.videos {
     background-color: #f9f9f9;
-    width: 100%;
-    height: 100%;
+    border: 1px solid #ddd;
     padding: 15px 15px;
-    border-top: 1px solid #ddd;
     overflow-y: scroll;
+    margin-left: 230px; 
 }
+
 .videos_container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
+
 .video {
     width: 310px;
     margin-bottom: 30px;
-    
 }
 
-.video_thumbnail{
+.video_thumbnail {
     width: 100%;
     height: 170px;
     text-align: right;
@@ -170,22 +177,22 @@ hr {
 
 .video_thumbnail img {
     object-fit: cover;
-    border-radius: 10px;
     height: 100%;
     width: 100%;
+    border-radius: 10px;
 }
+
 .video_time {
-    font-size: 12px;
-    font-weight: 500;
-    margin-right: 5px;
-    padding: 2px 2px;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: 500px;
+    background-color: black;
     color: white;
-    bottom: 28px ;
-    border-radius: 5px;
     display: inline-block;
-    width: auto;
+    padding: 2px 2px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 30px;
+    margin-right: 5px;
 }
 
 .profile img {
@@ -205,20 +212,23 @@ hr {
     display: flex;
     flex-direction: column;
 }
+
 .title h3 {
-    color: rgb(3,3,3);
-    line-height: 18px;
+    color: rgb(3, 3, 3);
     font-size: 14px;
     margin-bottom: 6px;
+    line-height: 18px;
 }
+
 .title a,
 span {
     text-decoration: none;
-    color:rgb(96,96,96);
+    color: rgb(96, 96, 96);
     font-size: 14px;
 }
+
 h1 {
     font-size: 20px;
-    margin-bottom: 10px;
-    color:rgb(3,3,3);
+    color: black;
+    margin: 10px;
 }
